@@ -7,6 +7,7 @@
 # Visit http://www.pragmaticprogrammer.com/titles/rails4 for more book information.
 #---
 class CartsController < ApplicationController
+   skip_before_action :authorize, only: [:create, :update, :destroy]
   # before_action :set_cart, only: [:show, :edit, :update, :destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
   # GET /carts
@@ -64,7 +65,7 @@ class CartsController < ApplicationController
   def destroy
     @cart.delete
     respond_to do |format|
-      format.html { redirect_to carts_url }
+      format.html { redirect_to store_url }
       format.json { head :no_content }
     end
   end

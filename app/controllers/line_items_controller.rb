@@ -9,6 +9,7 @@
 class LineItemsController < ApplicationController
   # include CurrentCart
   # before_action :set_cart, only: [:create, :destroy]
+  skip_before_action :authorize, only: :create
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
 
   # GET /line_items
@@ -16,7 +17,9 @@ class LineItemsController < ApplicationController
   def index
     @line_items = LineItem.all
   end
-
+  def latest
+    @newest = LineItem.latest
+  end
   # GET /line_items/1
   # GET /line_items/1.json
   def show
@@ -74,7 +77,7 @@ class LineItemsController < ApplicationController
       @line_item.save
     end
     respond_to do |format|
-      format.html { redirect_to @cart }
+      format.html { redirect_to :back }
       format.json { head :no_content }
     end
   end
