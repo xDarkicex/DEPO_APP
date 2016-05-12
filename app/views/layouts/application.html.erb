@@ -28,13 +28,8 @@
 				<% end %>
 			<% end %>
       <% if controller.controller_name == 'store' %>
-				<div id="callout">
-					<h3>Latest & Greatest!</h3>
-				  <%= link_to  image_tag(Product.latest.image_url), Product.latest %>  
-					<p><%= Product.latest.title %></p>
-					<p><%= Product.latest.price%></p>
-				</div>
-<% end %>
+				<%= render partial: "layouts/callout" %> 
+			<% end %>
 		      <ul>
 						<li><%= link_to  "Home", "/" %></li>
 		        <li><%= link_to "Questions", pages_FAQ_path %></li>

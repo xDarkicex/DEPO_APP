@@ -1,0 +1,6 @@
+<div id="callout">
+  <h3>Latest & Greatest!</h3>
+  <%= link_to  image_tag(Product.latest.image_url), Product.latest %>
+  <p><%= Product.latest.title %></p>
+  <p><%= Product.latest.price%></p>
+</div>
