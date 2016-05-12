@@ -28,12 +28,13 @@
 				<% end %>
 			<% end %>
       <% if controller.controller_name == 'store' %>
-				<%= render partial: "layouts/callout" %> 
+				<%= render partial: "layouts/callout" %>
 			<% end %>
 		      <ul>
 						<li><%= link_to  "Home", "/" %></li>
 		        <li><%= link_to "Questions", pages_FAQ_path %></li>
 		        <li><%= link_to "NEWS", pages_NEWS_path %></li>
+						<li><%= link_to 'New User', new_user_path %></li>
 		      </ul>
 
 				<%= hidden_div_if(!session[:user_id], id: 'login_welcome') do %>
