@@ -11,6 +11,10 @@
  *= require_self
  *= require_tree .
  */
+*{
+  margin: 0;
+  padding: 0;
+}
 
 .locale {
   float: right;
@@ -53,7 +57,7 @@
     padding: 1em 2em;
     width: 13em;
     background: #141;
-    
+
     //Styles the callout - extra class assignment
     #callout p {
       color: white;
