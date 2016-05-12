@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  skip_before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
@@ -59,7 +59,7 @@ class UsersController < ApplicationController
       flash[:notice] = "User #{@user.name} deleted"
     rescue StandardError => e
       flash[:notice] = e.message
-    end  
+    end
     respond_to do |format|
       format.html { redirect_to users_url }
       format.json { head :no_content }
