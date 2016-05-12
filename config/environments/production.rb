@@ -1,11 +1,3 @@
-#---
-# Excerpted from "Agile Web Development with Rails",
-# published by The Pragmatic Bookshelf.
-# Copyrights apply to this code. It may not be used to create training material, 
-# courses, books, articles, and the like. Contact us if you are in doubt.
-# We make no guarantees that this code is fit for any purpose. 
-# Visit http://www.pragmaticprogrammer.com/titles/rails4 for more book information.
-#---
 Depot::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -85,4 +77,15 @@ Depot::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+      config.action_mailer.delivery_method = :smtp
+
+    config.action_mailer.smtp_settings = {
+        address: "smtp.gmail.com",
+        port: 587,
+        domain: "gmail.com",
+        authentication: 'login',
+        user_name: "wilofsmith@gmail.com",
+        password: "Usera1b2!",
+        enable_starttls_auto: true
+    }
 end

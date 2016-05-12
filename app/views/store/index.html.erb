@@ -2,20 +2,27 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 
-<h1>Your Pragmatic Catalog</h1>
-<%= @display_count %>
+<h1><%= t('.title_html') %></h1>
+<h3><%= session[:counter] %></h3>
+
 <% cache ['store', Product.latest] do %>
-  <% @products.each do |product| %>
-    <% cache ['entry', product] do %>
-      <div class="entry">
-        <%= image_tag(product.image_url) %>
-        <h3><%= link_to  product.title, product %></h3>
-        <%= sanitize(product.description) %>
-        <div class="price_line">
-          <span class="price"><%= number_to_currency(product.price) %></span>
-          <%= button_to 'Add to Cart', line_items_path(product_id: product), remote: true %>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
+
+	<% @products.each do |product| %>
+
+		<% cache ['entry', product] do %>
+
+		<div class="entry">
+			 <%= link_to  image_tag(product.image_url), product %>  
+			 <h3><%= link_to  product.title, product %></h3>
+			 <%= sanitize(product.description) %>
+			 <div class="price_line">
+			 	<span class="price"><%= number_to_currency(product.price) %></span>
+			 	<%= button_to t('.add_html'), line_items_path(product_id: product), remote: true %>
+			 </div>
+		</div>
+
+		<% end %>
+
+	<% end %>
+
 <% end %>
