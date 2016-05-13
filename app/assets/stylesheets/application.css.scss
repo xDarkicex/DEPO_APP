@@ -28,11 +28,17 @@
 
 #banner {
   background: white;
-  box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.3);
   padding-top: 10px;
-  border-bottom: 2px solid;
+  z-index: 9;
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  border-bottom: 2px solid rgba(0,0,0,0.1);
   font: small-caps 60px/70px "Arial Black", sans-serif;
-  color: #282;
+  color: white;
+  text-shadow: inset 1px 1px 5px rgba(0,0,0,0.5);
   text-align: center;
 
   img {
@@ -51,6 +57,7 @@
 
 #columns {
   background: #141;
+  padding-top: 70px;
 
   #main {
     margin-left: 17em;
