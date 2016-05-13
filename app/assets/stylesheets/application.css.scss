@@ -36,11 +36,11 @@
   left:0;
   right:0;
   border-bottom: 2px solid rgba(0,0,0,0.1);
-  font: small-caps 60px/70px "Arial Black", sans-serif;
+  font: small-caps 20px/30px "Arial Black", sans-serif;
   text-align: center;
   h1{
-    color: white;
-    text-shadow: inset 1px 1px 5px rgba(0,0,0,0.5);
+    color: rgba(225,225,225,0.3);
+    text-shadow: 1px 4px 6px rgba(0,0,0,0.2), 0 0 0 #000, 1px 4px 6px rgba(0,0,0,0.2);
   }
   img {
     float:left;
