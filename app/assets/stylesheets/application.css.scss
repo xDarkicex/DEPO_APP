@@ -37,10 +37,11 @@
   right:0;
   border-bottom: 2px solid rgba(0,0,0,0.1);
   font: small-caps 60px/70px "Arial Black", sans-serif;
-  color: white;
-  text-shadow: inset 1px 1px 5px rgba(0,0,0,0.5);
   text-align: center;
-
+  h1{
+    color: white;
+    text-shadow: inset 1px 1px 5px rgba(0,0,0,0.5);
+  }
   img {
     float:left;
   }
